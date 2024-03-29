@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Contact</title>
+</head>
+
+<style>
+  body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: rgb(206, 228, 228);
+    }
+
+	h1 {
+		color: #008080;
+		text-align: center;
+		font-size: 36px;
+		margin-bottom: 40px;
+	}
+
+	form {
+		max-width: 800px;
+		margin: 0 auto;
+		padding: 20px;
+		background-color: #f0f0f0;
+		border: 1px solid #ccc;
+		box-shadow: 0 0 10px #ccc;
+	}
+
+	label {
+		display: block;
+		margin-bottom: 10px;
+		color: #333;
+		font-weight: bold;
+	}
+
+	input, select {
+		display: block;
+		width: 100%;
+		padding: 10px;
+		font-size: 16px;
+		border: 1px solid #ccc;
+		border-radius: 5px;
+		margin-bottom: 20px;
+	}
+
+	select {
+		margin-top: -1px;
+	}
+
+	input[type="submit"] {
+		background-color: #008080;
+		color: #fff;
+		font-size: 20px;
+		padding: 10px 20px;
+		border: none;
+		border-radius: 5px;
+		cursor: pointer;
+	}
+
+	input[type="submit"]:hover {
+		background-color: #006666;
+	}
+</style>
+
+
+<body>
+    <h1>Recvoir Information</h1>
+    <form action="#" method="post" id="pokemonForm">
+        <label for="Nom">Nom:</label>
+        <input type="text" name="Nom" id="Nom"><br><br> 
+    
+        <label for="Prénom">Prénom:</label>
+        <input type="text" name="Prénom" id="Prénom"><br><br>
+    
+        <label for="date_de_naissance">Date de naissance:</label>
+        <input type="date" name="date_de_naissance" id="date_de_naissance"><br><br>
+    
+        <label for="Email">Email:</label>
+        <input type="email" name="Email" id="Email"><br><br>
+    
+        <input type="submit" value="Envoyer">
+    </form>
+    
+    <script>
+        document.getElementById('pokemonForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Empêcher le comportement de soumission par défaut
+            const formData = new FormData(this); // Récupérer les données du formulaire
+    
+            // Envoyer les données au serveur Node.js
+            fetch('/send-email', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Erreur lors de l\'envoi du formulaire.');
+                }
+                alert('E-mail envoyé avec succès !'); // Afficher une alerte si l'e-mail est envoyé avec succès
+                this.reset(); // Réinitialiser le formulaire après l'envoi
+            })
+            .catch(error => {
+                console.error('Erreur:', error);
+                alert('Une erreur est survenue lors de l\'envoi de l\'e-mail. Veuillez réessayer plus tard.');
+            });
+        });
+    </script>
+    
+
+</body>
+
+</html>

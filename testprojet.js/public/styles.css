@@ -1,0 +1,109 @@
+body {
+    font-family: 'Pokemon', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #B8CBD0;
+}
+
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #20B49C;
+    border: 1px solid #ffffff;
+    box-shadow: 0 0 15px #ffffff;
+}
+
+.header {
+    color: #137C8B;
+    padding: 30px;
+    text-align: center;
+}
+#header {
+    background-color: #137C8B;
+    color: #ffcc03;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#sidebar {
+    text-align: left;
+    color: azure;
+}
+
+.container {
+    text-align: center;
+}
+
+#pokemonList {
+    list-style-type: none;
+    padding: 0;
+}
+
+#pokemonList li {
+    font-size: 24px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: transform 0.5s ease;
+}
+
+#pokemonList li:hover {
+    transform: scale(1.1);
+}
+
+.contact {
+    text-align: right;
+}
+
+#footer {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: #344D59;
+    color: #B8CBD0;
+    padding: 10px;
+    text-align: center;
+    position: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: auto;
+    justify-content: auto;
+}
+
+
+
+#search-container {
+    margin-top: 20px;
+    margin-right: 20px;
+  }
+
+  #search {
+    width: 200px;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+
+
+  .pokemon-details img {
+    width: 100px; /* Taille initiale de l'image */
+    border: 2px solid #ccc; /* Bordure */
+    border-radius: 5px; /* Coins arrondis */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Ombre */
+    transition: transform 0.3s ease; /* Transition */
+}
+
+.pokemon-details img:hover {
+    transform: scale(1.1); /* Effet de survol pour agrandir l'image */
+}
+
+
+@font-face {
+    font-family: 'Pokemon';
+    src: url('./pokemon/Pokemon Solid.ttf') format('truetype'), /* Chemin vers la police Pokemon Solid */
+         url('./pokemon/Pokemon Hollow.ttf') format('truetype'); /* Chemin vers la police Pokemon Hollow */
+    font-weight: normal;
+    font-style: normal;
+}
