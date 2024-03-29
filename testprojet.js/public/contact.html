@@ -85,8 +85,8 @@
     
     <script>
         document.getElementById('pokemonForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Empêcher le comportement de soumission par défaut
-            const formData = new FormData(this); // Récupérer les données du formulaire
+            event.preventDefault(); 
+            const formData = new FormData(this); 
     
             // Envoyer les données au serveur Node.js
             fetch('/send-email', {
@@ -97,8 +97,8 @@
                 if (!response.ok) {
                     throw new Error('Erreur lors de l\'envoi du formulaire.');
                 }
-                alert('E-mail envoyé avec succès !'); // Afficher une alerte si l'e-mail est envoyé avec succès
-                this.reset(); // Réinitialiser le formulaire après l'envoi
+                alert('E-mail envoyé avec succès !'); 
+                this.reset(); 
             })
             .catch(error => {
                 console.error('Erreur:', error);
